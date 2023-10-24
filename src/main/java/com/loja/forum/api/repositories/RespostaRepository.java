@@ -1,4 +1,4 @@
-package com.loja.forum.api.repositories.resposta;
+package com.loja.forum.api.repositories;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
