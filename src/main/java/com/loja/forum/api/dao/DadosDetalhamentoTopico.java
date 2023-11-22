@@ -7,25 +7,17 @@ import com.loja.forum.api.models.StatusTopico;
 import com.loja.forum.api.models.Topico;
 import com.loja.forum.api.models.Usuario;
 
-import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.NotNull;
-
-public record DadosCadastroTopico(
-    @NotBlank
+public record DadosDetalhamentoTopico(
     String titulo,
-    @NotBlank
     String mensagem,
     LocalDate dataCriacao,
-    @NotBlank
     StatusTopico status,
-    @NotNull
     Usuario usuarioId,
-    @NotNull
     Curso cursoId
     )
 {
 
-    public DadosCadastroTopico(Topico topico) {
+    public DadosDetalhamentoTopico(Topico topico) {
         this(topico.getTitulo(), topico.getMensagem(), topico.getDataCriacao(), topico.getStatus(), topico.getUsuarioId(), topico.getCurso());
     }
 }

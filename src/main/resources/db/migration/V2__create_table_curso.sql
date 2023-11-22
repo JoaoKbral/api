@@ -5,5 +5,3 @@ create table cursos(
 
     primary key (id)
 );
-
-alter table usuario alter column email add constrain unique(email);
