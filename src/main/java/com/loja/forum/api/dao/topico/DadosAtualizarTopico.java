@@ -1,4 +1,4 @@
-package com.loja.forum.api.dao;
+package com.loja.forum.api.dao.topico;
 
 import com.loja.forum.api.models.Curso;
 import com.loja.forum.api.models.StatusTopico;

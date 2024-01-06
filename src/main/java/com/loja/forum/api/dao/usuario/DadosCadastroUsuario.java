@@ -1,4 +1,4 @@
-package com.loja.forum.api.dao;
+package com.loja.forum.api.dao.usuario;
 
 import com.loja.forum.api.models.Usuario;
 

@@ -15,10 +15,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.util.UriComponentsBuilder;
 
-import com.loja.forum.api.dao.DadosAtualizarTopico;
-import com.loja.forum.api.dao.DadosCadastroTopico;
-import com.loja.forum.api.dao.DadosDetalhamentoTopico;
-import com.loja.forum.api.dao.DadosListagemTopico;
+import com.loja.forum.api.dao.topico.DadosAtualizarTopico;
+import com.loja.forum.api.dao.topico.DadosCadastroTopico;
+import com.loja.forum.api.dao.topico.DadosDetalhamentoTopico;
+import com.loja.forum.api.dao.topico.DadosListagemTopico;
 import com.loja.forum.api.models.Topico;
 import com.loja.forum.api.repositories.TopicoRepository;
 

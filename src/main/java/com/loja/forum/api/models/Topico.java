@@ -4,9 +4,8 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
-
-import com.loja.forum.api.dao.DadosAtualizarTopico;
-import com.loja.forum.api.dao.DadosCadastroTopico;
+import com.loja.forum.api.dao.topico.DadosAtualizarTopico;
+import com.loja.forum.api.dao.topico.DadosCadastroTopico;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
@@ -21,7 +20,6 @@ import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import jakarta.validation.Valid;
 import lombok.AllArgsConstructor;
-import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
@@ -30,7 +28,6 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @Getter
-@EqualsAndHashCode(of = "id")
 public class Topico {
 
 	@Id
@@ -57,7 +54,7 @@ public class Topico {
 	private List<Resposta> repostas = new ArrayList<Resposta>();
 
 	public Topico(DadosCadastroTopico dados) {
-		this(null, dados.titulo(),dados.mensagem(),dados.dataCriacao(),dados.status(),dados.usuarioId(),dados.cursoId());
+		this( dados.titulo(),dados.mensagem(),dados.usuarioId(),dados.cursoId());
 	}
 
     public void atualizar(@Valid DadosAtualizarTopico dados) {
@@ -75,8 +72,36 @@ public class Topico {
 		}
     }
 
-	public Topico(Long id, String titulo, String mensagem, LocalDate dataCriacao, StatusTopico status,
-			Usuario usuarioId, Curso cursoId) {
+	// TODO n sei o que é
+	public Topico( String titulo, String mensagem, Usuario usuarioId, Curso cursoId) {
+
 	}
+
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((id == null) ? 0 : id.hashCode());
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Topico other = (Topico) obj;
+		if (id == null) {
+			if (other.id != null)
+				return false;
+		} else if (!id.equals(other.id))
+			return false;
+		return true;
+	}
+
+	
 
 }
